@@ -1986,6 +1986,9 @@ _PyPegen_checked_future_import(Parser *p, identifier module, asdl_alias_seq * na
             if (PyUnicode_CompareWithASCIIString(alias->name, "barry_as_FLUFL") == 0) {
                 p->flags |= PyPARSE_BARRY_AS_BDFL;
             }
+            if (PyUnicode_CompareWithASCIIString(alias->name, "spanish_lazy_imports") == 0) {
+                p->flags |= PyPARSE_SPANISH_LAZY_IMPORTS;
+            }
         }
     }
     return _PyAST_ImportFrom(module, names, level, lazy_token ? 1 : 0, lineno,
