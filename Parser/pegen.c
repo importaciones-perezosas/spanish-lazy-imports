@@ -784,6 +784,9 @@ compute_parser_flags(PyCompilerFlags *flags)
     if (flags->cf_flags & CO_FUTURE_BARRY_AS_BDFL) {
         parser_flags |= PyPARSE_BARRY_AS_BDFL;
     }
+    if (flags->cf_flags & CO_FUTURE_SPANISH_LAZY_IMPORTS) {
+        parser_flags |= PyPARSE_SPANISH_LAZY_IMPORTS;
+    }
     if (flags->cf_flags & PyCF_TYPE_COMMENTS) {
         parser_flags |= PyPARSE_TYPE_COMMENTS;
     }
